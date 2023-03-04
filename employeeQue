@@ -1,0 +1,25 @@
+create table employee(eid int,ename varchar(20),eaddress varchar(20),esalary int,doj varchar(20));
+insert into employee values(10,"ankit","mango",20000,"01-08-21");
+insert into employee values(20,"ankush","dimna",17000,"03-11-19");
+insert into employee values(30,"rohit","sakchi",13000,"24-06-20");
+insert into employee values(40,"altaf","goa",23000,"17-05-18");
+insert into employee values(40,"anish","mango",18000,"25-01-1999");
+insert into employee values(20,"ankush","dimna",17000,"27-10-1993");
+insert into employee values(50,"neha","noida",21000,"13-07-2001");
+insert into employee values(60,"kapil","mumbai",16000,"11-11-1995");
+insert into employee values(30,"suman","dimna",11000,"11-01-2000");
+-- max salary;
+select * from employee where esalary=(select max(esalary) from employee);
+-- second max salary;
+select * from employee where esalary=(select max(esalary) from employee where esalary not in (select max(esalary) from employee));
+-- retrieve all the information of employee whose name begins with 'a'
+select * from employee where ename like "a%";
+-- select all the information of employee whose salary is  21000,11000 and 13000;
+select * from employee where esalary in(21000,11000,13000);
+-- create a new table  with the help of existing table data and structure;
+create table emp2 as select * from employee;
+-- find all the employees records whose salary is between 10000 to 15000
+select * from employee where esalary between 10000 and 15000;
+-- delete multiple records from table;
+delete from employee where esalary in(17000,21000,11000);
+select * from employee;
