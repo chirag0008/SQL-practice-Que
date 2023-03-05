@@ -1,0 +1,7 @@
+create table emp(empno int,sal int,ename varchar(20));
+alter table emp add rownum int not null auto_increment primary key;
+insert into emp(empno,sal,ename)values(7839,5000,"king");
+insert into emp(empno,sal,ename) values(3232,10000,"eancd");
+insert into emp(empno,sal,ename) values(5678,6000,"sdfs");
+insert into emp(empno,sal,ename ) values(3212,4567,"wefr");
+select empno,sal,ename from emp where mod(rownum,2)<>0;
