@@ -1,0 +1,15 @@
+create table emp(empno int,sal int,ename varchar(20));
+alter table emp add rownum int not null auto_increment primary key;
+insert into emp(empno,sal,ename)values(7839,5000,"ming");
+insert into emp(empno,sal,ename) values(3232,10000,"eancd");
+insert into emp(empno,sal,ename) values(5678,6000,"sdfm");
+insert into emp(empno,sal,ename ) values(3212,4567,"mefr");
+-- display ename starting with m;
+select ename from emp where ename like "m%";
+-- display ename ending with m;
+select ename from emp where ename like "%m";
+-- display name with m at any position
+select ename from emp where ename like "%m%";
+-- display name with no m
+select ename from emp where ename not like "%m%";
+
