@@ -1,0 +1,7 @@
+create table employee(emp_id int,emp_name varchar(20),emp_sal int);
+insert into employee values(1,"chirag",10000);
+insert into employee values(2,"deepanshu",20);
+insert into employee values(3,"deepak",18);
+insert into employee values(4,"raman",1);
+-- display second maximum salary from employee table
+select emp_name from employee where emp_sal=(select max(emp_sal) from employee where emp_sal not in(select max(emp_sal) from employee));
