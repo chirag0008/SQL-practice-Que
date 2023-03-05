@@ -1,0 +1,10 @@
+create table emp(deptno int,sal int,empname varchar(20));
+insert into emp values(10,5000,"king");
+insert into emp values(30,4000,"blake");
+insert into emp values(10,2000,"clake");
+insert into emp values(20,2000,"jones");
+insert into emp values(20,3000,"scott");
+insert into emp values(20,3000,"ford");
+insert into emp values(20,1000,"smith");
+select max(sal),deptno from emp group by deptno;
+-- select count(deptno),deptno from emp group by deptno;
